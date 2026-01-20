@@ -10,57 +10,53 @@ const SLIDES: SlideData[] = [
     id: 0,
     type: SlideType.TITLE,
     title: 'Estrategia de Cercanía Digital IMERYS',
-    subtitle: 'Operación Santiago: Cerrando la brecha entre la gestión y el personal en planta.'
+    subtitle: 'Propuesta para Dirección: Erradicando el "RRHH no existe" mediante la Interactividad Total.'
   },
   {
     id: 1,
     type: SlideType.PROBLEM,
     title: 'El Problema: La Brecha de Comunicación',
     content: [
-      'Distancia física entre las oficinas centrales y la planta Santiago.',
-      'Sensación de "abandono" percibida por el personal operativo.',
-      'Canales de comunicación lentos o inexistentes en tiempo real.',
-      'Dificultad para canalizar sugerencias o reclamos de forma anónima y segura.'
+      'Distancia física entre gestión y planta.',
+      'Sensación de abandono y falta de apoyo.',
+      'Canales obsoletos que no llegan al operario.',
+      'Necesidad de transparencia en procesos de Santiago.'
     ]
   },
   {
     id: 2,
     type: SlideType.SOLUTION_OVERVIEW,
-    title: 'Solución Integral: Ecosistema Digital de 3 Capas',
+    title: 'Solución Integral: Ecosistema de 3 Capas',
     content: [
-      { layer: 'Informativa', title: 'Cartelera Web', desc: 'Implementación en Common Play para transmisión en vivo.' },
-      { layer: 'Escucha', title: 'Buzón Digital QR', desc: 'Formulario de consulta anónima integrado.' },
-      { layer: 'Presencia', title: 'Presencia Física', desc: 'Instalación de tótems y stickers en mesas del comedor.' }
+      { layer: 'Informativa', title: 'Cartelera Digital', desc: 'Common Play en el comedor para noticias en vivo.' },
+      { layer: 'Interactiva', title: 'Canal de Escucha Directa', desc: 'Seguro, rápido y anónimo mediante QR en mesas.' },
+      { layer: 'Gestión', title: 'Oficina Virtual 24/7', desc: 'Estatus de trámites y beneficios en tiempo real.' }
     ]
   },
   {
     id: 3,
     type: SlideType.DETAIL,
-    title: 'Capa 1: Cartelera Web (Common Play)',
-    subtitle: 'La ventana de la empresa en el comedor.',
+    title: 'Etapa 1: Canal de Escucha Directa',
+    subtitle: 'Seguro, rápido y totalmente anónimo.',
     content: {
       features: [
-        'Rotación automática de noticias de planta.',
-        'Visualización de beneficios del mes.',
-        'Reconocimiento a colaboradores destacado.',
-        'Sincronización via URL de Vercel para actualización instantánea.'
+        'Buzón digital con cifrado de identidad.',
+        'Consultas sobre el Convenio Colectivo.',
+        'Reporte de estado de entrega de EPP.',
+        'Acceso instantáneo desde el QR en la mesa.'
       ],
-      icon: 'fa-tv'
+      icon: 'fa-shield-halved'
     }
   },
   {
     id: 4,
-    type: SlideType.DETAIL,
-    title: 'Capa 2: Buzón Digital QR',
-    subtitle: 'Tu voz llega directamente a RRHH.',
+    type: SlideType.INTERACTIVE_PREVIEW,
+    title: 'Etapa 2: Módulos de Interactividad Total',
+    subtitle: 'Nuevas herramientas para el empoderamiento del personal.',
     content: {
-      features: [
-        'Anonimato garantizado para fomentar la participación.',
-        'Accesibilidad desde cualquier dispositivo móvil.',
-        'Respuesta centralizada por el equipo de RRHH.',
-        'Seguimiento de tendencias en preocupaciones del personal.'
-      ],
-      icon: 'fa-qrcode'
+      urna: { title: 'Urna de Cristal', progress: 65, status: 'En Proceso de Compra' },
+      kudos: { count: 12, latest: '¡Gracias Juan por el apoyo en la carga!' },
+      menu: ['Pastel de Papas', 'Ensalada Mixta', 'Fruta de Estación']
     }
   },
   {
@@ -68,32 +64,32 @@ const SLIDES: SlideData[] = [
     type: SlideType.LOGISTICS,
     title: 'Logística de Implementación',
     content: [
-      { step: 'Common Play', detail: 'Sincronización de la URL de Vercel para rotación en pantalla gigante.' },
-      { step: 'Material POP', detail: 'Impresión de 20/30 stickers/carteles pequeños para las mesas del comedor.' },
-      { step: 'Costo', detail: 'Inversión mínima en materiales de impresión. Software ya desarrollado.' }
+      { step: 'Common Play', detail: 'Sincronización de URL para rotación automática en TV comedor.' },
+      { step: 'QR en Mesas', detail: 'Instalación de 30 stickers con "Llamado de Auxilio" integrado.' },
+      { step: 'Presencia Física', detail: 'Tótems informativos en puntos clave de la operación.' }
     ]
   },
   {
     id: 6,
     type: SlideType.KPI,
-    title: 'Indicadores de Éxito (KPIs)',
+    title: 'Indicadores de Éxito',
     content: [
-      'Reducción del 30% en reclamos informales en el primer trimestre.',
-      'Aumento en el índice de satisfacción en las encuestas de clima interno.',
-      'Incremento en la participación de programas de beneficios.'
+      'Erradicación de comentarios negativos sobre la ausencia de RRHH.',
+      'Aumento en la participación de encuestas de clima regional.',
+      'Mejora en los tiempos de respuesta a dudas de planta.'
     ]
   },
   {
     id: 7,
     type: SlideType.MOCKUP,
-    title: 'Diseño del Cartel para Mesas',
-    subtitle: 'Diseño funcional para maximizar el escaneo.'
+    title: 'Diseño para las Mesas (QR)',
+    subtitle: '¿Almorzando con una buena idea? Tu opinión es el motor.'
   },
   {
     id: 8,
     type: SlideType.TRACKING,
-    title: 'Cuadro de Seguimiento de Proyecto',
-    subtitle: 'Estado actual y próximos pasos.'
+    title: 'Seguimiento del Proyecto',
+    subtitle: 'Control de hitos y requerimientos técnicos.'
   }
 ];
 
@@ -142,10 +138,13 @@ const App: React.FC = () => {
              >
                <i className="fa-solid fa-bars"></i>
              </button>
-             <span className="font-bold tracking-widest text-sm text-white/80">IMERYS SANTIAGO</span>
+             <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center font-bold text-white text-xs">IM</div>
+                <span className="font-bold tracking-widest text-sm text-white/80">IMERYS SANTIAGO</span>
+             </div>
           </div>
           <div className="text-xs uppercase tracking-widest pointer-events-none">
-            Estrategia de Cercanía Digital v1.0
+            Estrategia de Cercanía Digital v1.1
           </div>
         </header>
 

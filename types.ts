@@ -7,7 +7,8 @@ export enum SlideType {
   LOGISTICS = 'LOGISTICS',
   KPI = 'KPI',
   MOCKUP = 'MOCKUP',
-  TRACKING = 'TRACKING'
+  TRACKING = 'TRACKING',
+  INTERACTIVE_PREVIEW = 'INTERACTIVE_PREVIEW'
 }
 
 export interface Task {

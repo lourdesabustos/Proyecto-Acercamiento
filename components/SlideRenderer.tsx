@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react';
-import { SlideData, SlideType, Task } from '../types';
-import TrackingTable from './TrackingTable';
+import React from 'react';
+import { SlideData, SlideType } from '../types.ts';
+import TrackingTable from './TrackingTable.tsx';
 
 const SlideRenderer: React.FC<{ slide: SlideData }> = ({ slide }) => {
   switch (slide.type) {
@@ -49,7 +49,7 @@ const SlideRenderer: React.FC<{ slide: SlideData }> = ({ slide }) => {
                <div className="absolute top-4 left-4 text-slate-200 text-6xl opacity-50">
                  <i className="fa-solid fa-quote-left"></i>
                </div>
-               <p className="text-2xl font-light italic text-slate-500 text-center relative z-10">
+               <p className="text-2xl font-bold italic text-red-600 text-center relative z-10 leading-tight">
                  "RRHH no existe, RRHH no nos apoya"
                </p>
                <div className="absolute bottom-4 right-4 text-slate-200 text-6xl opacity-50">
